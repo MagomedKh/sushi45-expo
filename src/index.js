@@ -1,8 +1,8 @@
-import { Platform, StyleSheet, View } from "react-native";
+import { Linking, Platform, StyleSheet, View } from "react-native";
 import ContentView from "./contentView";
 import OneSignal_AppId from "./config.json";
 import { useEffect } from "react";
-import OneSignal from "onesignal-expo-plugin";
+import OneSignal from "react-native-onesignal";
 
 // OneSignal.setAppId(OneSignal_AppId);
 
@@ -41,25 +41,11 @@ import OneSignal from "onesignal-expo-plugin";
 export default function App() {
    OneSignal.setAppId(OneSignal_AppId);
    OneSignal.promptForPushNotificationsWithUserResponse();
-   alert("sadfas");
-   OneSignal.setNotificationWillShowInForegroundHandler(
-      (notificationReceivedEvent) => {
-         console.log(
-            "OneSignal: notification will show in foreground:",
-            notificationReceivedEvent
-         );
-         let notification = notificationReceivedEvent.getNotification();
-         console.log("notification: ", notification);
-         const data = notification.additionalData;
-         console.log("additionalData: ", data);
-         // Complete with null means don't show a notification.
-         notificationReceivedEvent.complete(notification);
-      }
-   );
-
+   alert("from app.js ");
    //Method for handling notifications opened
    OneSignal.setNotificationOpenedHandler((notification) => {
       console.log("OneSignal: notification opened:", notification);
+      Linking.openURL("./");
    });
    return (
       <View style={styles.container}>

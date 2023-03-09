@@ -113,7 +113,7 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.rniqmedia"
+    namespace 'com.mycompany.sushi45'
     defaultConfig {
         applicationId 'com.mycompany.sushi45'
         minSdkVersion rootProject.ext.minSdkVersion

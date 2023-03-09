@@ -1,5 +1,13 @@
 import { useEffect, useRef } from "react";
-import { StyleSheet, View, BackHandler, Platform, Linking } from "react-native";
+import {
+   StyleSheet,
+   View,
+   BackHandler,
+   Platform,
+   Linking,
+   Text,
+   Button,
+} from "react-native";
 import { WebView } from "react-native-webview";
 import RenderLoadingView from "./renderLoadingView";
 import { baseUrl } from "./config.json";
@@ -84,6 +92,15 @@ const ContentView = () => {
             onShouldStartLoadWithRequest={handleShouldStartLoadWithRequest}
             originWhitelist={["*"]}
          />
+         <Button
+            onClick={() => {
+               alert(3);
+               Linking.openURL("/menu");
+            }}
+            title={"sdfas"}
+         >
+            {/* <Text>dsfsd</Text> */}
+         </Button>
       </View>
    );
 };
