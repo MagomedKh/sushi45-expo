@@ -5,7 +5,7 @@ const RenderLoadingView = () => (
       <ActivityIndicator
          style={styles.loadingIcon}
          size={"large"}
-         color={"blue"}
+         color={"#228bac"}
       />
    </View>
 );
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
       alignItems: "center",
    },
    loadingIcon: {
-      transform: "scale(1.75)",
+      transform: "scale(2)",
    },
 });
 
